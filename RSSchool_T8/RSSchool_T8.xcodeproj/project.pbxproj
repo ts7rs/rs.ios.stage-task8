@@ -8,27 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		5809977F26A18661001E00A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5809977E26A18661001E00A3 /* AppDelegate.m */; };
-		5809978226A18661001E00A3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5809978126A18661001E00A3 /* SceneDelegate.m */; };
 		5809978526A18661001E00A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5809978426A18661001E00A3 /* ViewController.m */; };
-		5809978826A18661001E00A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5809978626A18661001E00A3 /* Main.storyboard */; };
 		5809978A26A18664001E00A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5809978926A18664001E00A3 /* Assets.xcassets */; };
 		5809978D26A18664001E00A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5809978B26A18664001E00A3 /* LaunchScreen.storyboard */; };
 		5809979026A18664001E00A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5809978F26A18664001E00A3 /* main.m */; };
+		5809979726A1AF3E001E00A3 /* RSSchool_T8_Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 5809979626A1AF3D001E00A3 /* RSSchool_T8_Fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5809977A26A18661001E00A3 /* RSSchool_T8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSchool_T8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5809977D26A18661001E00A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5809977E26A18661001E00A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5809978026A18661001E00A3 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		5809978126A18661001E00A3 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		5809978326A18661001E00A3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5809978426A18661001E00A3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		5809978726A18661001E00A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5809978926A18664001E00A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5809978C26A18664001E00A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5809978E26A18664001E00A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5809978F26A18664001E00A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5809979626A1AF3D001E00A3 /* RSSchool_T8_Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RSSchool_T8_Fonts; path = ../../../../Downloads/RSSchool_T8_Fonts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,14 +60,12 @@
 			children = (
 				5809977D26A18661001E00A3 /* AppDelegate.h */,
 				5809977E26A18661001E00A3 /* AppDelegate.m */,
-				5809978026A18661001E00A3 /* SceneDelegate.h */,
-				5809978126A18661001E00A3 /* SceneDelegate.m */,
 				5809978326A18661001E00A3 /* ViewController.h */,
 				5809978426A18661001E00A3 /* ViewController.m */,
-				5809978626A18661001E00A3 /* Main.storyboard */,
 				5809978926A18664001E00A3 /* Assets.xcassets */,
 				5809978B26A18664001E00A3 /* LaunchScreen.storyboard */,
 				5809978E26A18664001E00A3 /* Info.plist */,
+				5809979626A1AF3D001E00A3 /* RSSchool_T8_Fonts */,
 				5809978F26A18664001E00A3 /* main.m */,
 			);
 			path = RSSchool_T8;
@@ -133,8 +128,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5809978D26A18664001E00A3 /* LaunchScreen.storyboard in Resources */,
+				5809979726A1AF3E001E00A3 /* RSSchool_T8_Fonts in Resources */,
 				5809978A26A18664001E00A3 /* Assets.xcassets in Resources */,
-				5809978826A18661001E00A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,21 +143,12 @@
 				5809978526A18661001E00A3 /* ViewController.m in Sources */,
 				5809977F26A18661001E00A3 /* AppDelegate.m in Sources */,
 				5809979026A18664001E00A3 /* main.m in Sources */,
-				5809978226A18661001E00A3 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5809978626A18661001E00A3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5809978726A18661001E00A3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5809978B26A18664001E00A3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -293,6 +279,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RSSchool_T8/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +297,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RSSchool_T8/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

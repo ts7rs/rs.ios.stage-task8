@@ -9,6 +9,8 @@
 
 @interface ViewController : UIViewController
 
-
+@property (nonatomic, strong) UILabel *myLabel;
+@property (nonatomic, strong) UIBezierPath *path;
+@property (nonatomic, strong) UIButton *paletteButton, *timerButton, *drawButton, *shareButton, *drawingsButton;
 @end
 
