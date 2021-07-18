@@ -13,16 +13,16 @@
 
 @implementation ViewController
 @synthesize path;
-@synthesize test;
-@synthesize paletteButton, timerButton, drawButton, shareButton, drawingsButton;
+@synthesize paletteButton, timerButton, drawButton, shareButton, drawingsButton, redButton, darkBlueButton, greenButton, greyButton, violetButton, peachButton, orangeButton, blueButton, pinkButton, darkGreyButton, darkGreenButton, brownButton;
+@synthesize colorView;
+@synthesize color;
+@synthesize color1, color2, color3;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-   /* self.headerArtist = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
-    self.headerArtist.delegate = self;
-    [self.view addSubview: self.headerArtist];*/
-  
+
     UINavigationBar* navigationbar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, UIApplication.sharedApplication.statusBarFrame.size.height, self.view.frame.size.width, 50)];
     
     UINavigationItem* navigationItem = [[UINavigationItem alloc] initWithTitle:@"Artist"];
@@ -50,6 +50,9 @@
     [paletteButton setTitleColor:[UIColor colorWithRed:33/255.0 green:176/255.0 blue:142/255.0 alpha:1.0] forState:UIControlStateNormal];
     self.paletteButton.layer.cornerRadius = 10;
     self.paletteButton.layer.borderColor = [UIColor colorWithRed:33.0 / 255.0 green:176.0 / 255.0 blue:142.0 / 255.0 alpha:1.0].CGColor;
+    [self.paletteButton addTarget:self
+                          action:@selector(paletteButtonIsPressed:)
+                forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:self.paletteButton];
     
     self.timerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -90,7 +93,6 @@
     self.shareButton.layer.opacity = 0.5;
     [self.view addSubview:self.shareButton];
     
-    
     CALayer *subLayerCanvas = [CALayer layer];
     subLayerCanvas.backgroundColor = [UIColor whiteColor].CGColor;
     subLayerCanvas.frame = CGRectMake(38, 102, 300, 300);
@@ -102,15 +104,198 @@
     subLayerCanvas.shadowRadius = 8;
     
     [self.view.layer addSublayer:subLayerCanvas];
+
+    /*CGRect viewRect = CGRectMake(0, 333, 375, 333.5);
+     UIView *colorView = [[UIView alloc] initWithFrame:viewRect];
+     colorView.backgroundColor = [UIColor whiteColor];
+     [self.view addSubview:colorView];*/
     
-/*
- HEAD
- 
- */
+    self.redButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.redButton.frame = CGRectMake(17.0f, 425.0f, 24.0f, 24.0f);
+    self.redButton.layer.cornerRadius = 6;
+    self.redButton.layer.backgroundColor = [UIColor colorWithRed:226.0 / 255.0 green:27.0 / 255.0 blue:44.0 / 255.0 alpha:1.0].CGColor;
+    [self.redButton addTarget:self
+                         action:@selector(redButtonIsPressed:)
+               forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.redButton setTag:1];
+    [self.view addSubview:redButton];
+    
+    
+    self.darkBlueButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.darkBlueButton.frame = CGRectMake(72.0f, 425.0f, 24.0f, 24.0f);
+    self.darkBlueButton.layer.cornerRadius = 6;
+    self.darkBlueButton.layer.backgroundColor = [UIColor colorWithRed:62.0 / 255.0 green:23.0 / 255.0 blue:204.0 / 255.0 alpha:1.0].CGColor;
+    [self.darkBlueButton addTarget:self
+                         action:@selector(darkBlueButtonIsPressed:)
+               forControlEvents:UIControlEventTouchUpInside];
+    [self.darkBlueButton setTag:2];
+    [self.view addSubview:darkBlueButton];
+    
+    self.greenButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.greenButton.frame = CGRectMake(127.0f, 425.0f, 24.0f, 24.0f);
+    self.greenButton.layer.cornerRadius = 6;
+    self.greenButton.layer.backgroundColor = [UIColor colorWithRed:0 / 255.0 green:124.0 / 255.0 blue:55.0 / 255.0 alpha:1.0].CGColor;
+    [self.greenButton addTarget:self
+                         action:@selector(greenButtonIsPressed:)
+               forControlEvents:UIControlEventTouchUpInside];
+    [self.greenButton setTag:3];
+    [self.view addSubview:greenButton];
+    
+    self.greyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.greyButton.frame = CGRectMake(182.0f, 425.0f, 24.0f, 24.0f);
+    self.greyButton.layer.cornerRadius = 6;
+    self.greyButton.layer.backgroundColor = [UIColor colorWithRed:128 / 255.0 green:128.0 / 255.0 blue:128.0 / 255.0 alpha:1.0].CGColor;
+    [self.greyButton addTarget:self
+                         action:@selector(greyButtonIsPressed:)
+               forControlEvents:UIControlEventTouchUpInside];
+    [self.greyButton setTag:4];
+    [self.view addSubview:greyButton];
+    
+    self.violetButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.violetButton.frame = CGRectMake(237.0f, 425.0f, 24.0f, 24.0f);
+    self.violetButton.layer.cornerRadius = 6;
+    self.violetButton.layer.backgroundColor = [UIColor colorWithRed:157 / 255.0 green:94.0 / 255.0 blue:234.0 / 255.0 alpha:1.0].CGColor;
+    [self.violetButton addTarget:self
+                         action:@selector(violetButtonIsPressed:)
+               forControlEvents:UIControlEventTouchUpInside];
+    [self.violetButton setTag:5];
+    [self.view addSubview:violetButton];
+    
+    self.peachButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.peachButton.frame = CGRectMake(292.0f, 425.0f, 24.0f, 24.0f);
+    self.peachButton.layer.cornerRadius = 6;
+    self.peachButton.layer.backgroundColor = [UIColor colorWithRed:255 / 255.0 green:122.0 / 255.0 blue:104.0 / 255.0 alpha:1.0].CGColor;
+    [self.peachButton addTarget:self
+                         action:@selector(peachButtonIsPressed:)
+               forControlEvents:UIControlEventTouchUpInside];
+    [self.peachButton setTag:5];
+    [self.view addSubview:peachButton];
+    
+    self.orangeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.orangeButton.frame = CGRectMake(17.0f, 470.0f, 24.0f, 24.0f);
+    self.orangeButton.layer.cornerRadius = 6;
+    self.orangeButton.layer.backgroundColor = [UIColor colorWithRed:255.0 / 255.0 green:173.0 / 255.0 blue:84.0 / 255.0 alpha:1.0].CGColor;
+    [self.orangeButton addTarget:self
+                         action:@selector(orangeButtonIsPressed:)
+               forControlEvents:UIControlEventTouchUpInside];
+    [self.orangeButton setTag:7];
+    [self.view addSubview:orangeButton];
+    
+    self.blueButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.blueButton.frame = CGRectMake(72.0f, 470.0f, 24.0f, 24.0f);
+    self.blueButton.layer.cornerRadius = 6;
+    self.blueButton.layer.backgroundColor = [UIColor colorWithRed:0 / 255.0 green:174.0 / 255.0 blue:237.0 / 255.0 alpha:1.0].CGColor;
+    [self.blueButton addTarget:self
+                         action:@selector(blueButtonIsPressed:)
+               forControlEvents:UIControlEventTouchUpInside];
+    [self.blueButton setTag:8];
+    [self.view addSubview:blueButton];
+    
+    self.pinkButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.pinkButton.frame = CGRectMake(127.0f, 470.0f, 24.0f, 24.0f);
+    self.pinkButton.layer.cornerRadius = 6;
+    self.pinkButton.layer.backgroundColor = [UIColor colorWithRed:255 / 255.0 green:119.0 / 255.0 blue:162.0 / 255.0 alpha:1.0].CGColor;
+    [self.pinkButton addTarget:self
+                         action:@selector(pinkButtonIsPressed:)
+               forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.pinkButton setTag:9];
+    [self.view addSubview:pinkButton];
+    
+    self.darkGreyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.darkGreyButton.frame = CGRectMake(182.0f, 470.0f, 24.0f, 24.0f);
+    self.darkGreyButton.layer.cornerRadius = 6;
+    self.darkGreyButton.layer.backgroundColor = [UIColor colorWithRed:0 / 255.0 green:46.0 / 255.0 blue:60.0 / 255.0 alpha:1.0].CGColor;
+    [self.darkGreyButton addTarget:self
+                         action:@selector(darkGreyButtonIsPressed:)
+               forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.darkGreyButton setTag:10];
+    [self.view addSubview:darkGreyButton];
+    
+    self.darkGreenButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.darkGreenButton.frame = CGRectMake(237.0f, 470.0f, 24.0f, 24.0f);
+    self.darkGreenButton.layer.cornerRadius = 6;
+    self.darkGreenButton.layer.backgroundColor = [UIColor colorWithRed:14 / 255.0 green:55.0 / 255.0 blue:24.0 / 255.0 alpha:1.0].CGColor;
+    [self.darkGreenButton addTarget:self
+                         action:@selector(darkGreenButtonIsPressed:)
+               forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.darkGreenButton setTag:11];
+    [self.view addSubview:darkGreenButton];
+    
+    self.brownButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.brownButton.frame = CGRectMake(292.0f, 470.0f, 24.0f, 24.0f);
+    self.brownButton.layer.cornerRadius = 6;
+    self.brownButton.layer.backgroundColor = [UIColor colorWithRed:97 / 255.0 green:15.0 / 255.0 blue:16.0 / 255.0 alpha:1.0].CGColor;
+    [self.brownButton addTarget:self
+                         action:@selector(brownButtonIsPressed:)
+               forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.brownButton setTag:12];
+    [self.view addSubview:brownButton];
+
+}
+
+- (void) redButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"red");
+    color1 = @1;
+}
+- (void) darkBlueButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"dark blue");
+    color1 = @2;
+}
+- (void) greenButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"green");
+    color1 = @3;
+}
+- (void) greyButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"grey");
+    color1 = @4;
+}
+- (void) violetButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"violet");
+    color1 = @5;
+}
+- (void) peachButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"peach");
+    color1 = @6;
+}
+- (void) orangeButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"orange");
+    color1 = @7;
+}
+- (void) blueButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"blue");
+    color1 = @8;
+}
+- (void) pinkButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"pink");
+    color1 = @9;
+}
+- (void) darkGreyButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"dark grey");
+    color1 = @10;
+}
+- (void) darkGreenButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"dark green");
+    color1 = @11;
+}
+- (void) brownButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"dark green");
+    color1 = @12;
+}
+
+- (void) paletteButtonIsPressed:(UIButton *)paramSender{
+    CGRect viewRect = CGRectMake(0, 333, 375, 333.5);
+    UIView *colorView = [[UIView alloc] initWithFrame:viewRect];
+    colorView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:colorView];
 }
 
 - (void) buttonIsPressed:(UIButton *)paramSender{
-
+   
     UIBezierPath *path = [UIBezierPath bezierPath];
     
     [path moveToPoint:CGPointMake(61.5, 29)];
@@ -226,9 +411,70 @@
     [path closePath];
     
     CAShapeLayer *bezier = [[CAShapeLayer alloc] init];
-
     bezier.path          = path.CGPath;
-    bezier.strokeColor   = [UIColor blackColor].CGColor;
+    bezier.strokeColor   = [UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0].CGColor;
+    NSLog(@"color1 %@", color1);
+
+    if([color1  isEqual: @1]){
+        bezier.strokeColor   = [UIColor colorWithRed:226.0 / 255.0 green:27.0 / 255.0 blue:44.0 / 255.0 alpha:1.0].CGColor;
+        NSLog(@"@1 %@", color1);
+    }
+    
+    if([color1  isEqual: @2]){
+        bezier.strokeColor   = [UIColor colorWithRed:62.0 / 255.0 green:23.0 / 255.0 blue:204.0 / 255.0 alpha:1.0].CGColor;
+        NSLog(@"@2 %@", color1);
+    }
+    
+    if([color1  isEqual: @3]){
+        bezier.strokeColor   = [UIColor colorWithRed:0 / 255.0 green:124.0 / 255.0 blue:55.0 / 255.0 alpha:1.0].CGColor;
+        NSLog(@"@3 %@", color1);
+    }
+    
+    if([color1  isEqual: @4]){
+        bezier.strokeColor   = [UIColor colorWithRed:128 / 255.0 green:128.0 / 255.0 blue:128.0 / 255.0 alpha:1.0].CGColor; 
+        NSLog(@"@4 %@", color1);
+    }
+    
+    if([color1  isEqual: @5]){
+        bezier.strokeColor   = [UIColor colorWithRed:157 / 255.0 green:94.0 / 255.0 blue:234.0 / 255.0 alpha:1.0].CGColor;
+        NSLog(@"@5 %@", color1);
+    }
+    
+    if([color1  isEqual: @6]){
+        bezier.strokeColor   = [UIColor colorWithRed:255 / 255.0 green:122.0 / 255.0 blue:104.0 / 255.0 alpha:1.0].CGColor;
+        NSLog(@"@6 %@", color1);
+    }
+    
+    if([color1  isEqual: @7]){
+        bezier.strokeColor   = [UIColor colorWithRed:255.0 / 255.0 green:173.0 / 255.0 blue:84.0 / 255.0 alpha:1.0].CGColor;
+        NSLog(@"@7 %@", color1);
+    }
+    
+    if([color1  isEqual: @8]){
+        bezier.strokeColor   = [UIColor colorWithRed:0 / 255.0 green:174.0 / 255.0 blue:237.0 / 255.0 alpha:1.0].CGColor;
+        NSLog(@"@8 %@", color1);
+    }
+    
+    if([color1  isEqual: @9]){
+        bezier.strokeColor   = [UIColor colorWithRed:255 / 255.0 green:119.0 / 255.0 blue:162.0 / 255.0 alpha:1.0].CGColor;
+        NSLog(@"@9 %@", color1);
+    }
+    
+    if([color1  isEqual: @10]){
+        bezier.strokeColor   = [UIColor colorWithRed:0 / 255.0 green:46.0 / 255.0 blue:60.0 / 255.0 alpha:1.0].CGColor;
+        NSLog(@"@10 %@", color1);
+    }
+    
+    if([color1  isEqual: @11]){
+        bezier.strokeColor   = [ UIColor colorWithRed:14 / 255.0 green:55.0 / 255.0 blue:24.0 / 255.0 alpha:1.0].CGColor;
+        NSLog(@"@11 %@", color1);
+    }
+    
+    if([color1  isEqual: @12]){
+        bezier.strokeColor   = [UIColor colorWithRed:97 / 255.0 green:15.0 / 255.0 blue:16.0 / 255.0 alpha:1.0].CGColor;
+        NSLog(@"@12 %@", color1);
+    }
+
     bezier.fillColor     = [UIColor clearColor].CGColor;
     bezier.lineWidth     = 1.0;
     bezier.strokeStart   = 0.0;
