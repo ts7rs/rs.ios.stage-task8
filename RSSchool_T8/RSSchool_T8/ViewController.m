@@ -13,7 +13,7 @@
 
 @implementation ViewController
 @synthesize path;
-@synthesize paletteButton, timerButton, drawButton, shareButton, drawingsButton, redButton, darkBlueButton, greenButton, greyButton, violetButton, peachButton, orangeButton, blueButton, pinkButton, darkGreyButton, darkGreenButton, brownButton;
+@synthesize paletteButton, timerButton, drawButton, shareButton, drawingsButton, redButton, darkBlueButton, greenButton, greyButton, violetButton, peachButton, orangeButton, blueButton, pinkButton, darkGreyButton, darkGreenButton, brownButton, saveButton;
 @synthesize colorView;
 @synthesize color;
 @synthesize color1, color2, color3;
@@ -30,7 +30,6 @@
     [navigationbar setTranslucent:NO];
     [navigationbar setItems:@[navigationItem]];
     [self.view addSubview:navigationbar];
-    
     
     self.drawingsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.drawingsButton.frame = CGRectMake(250.0f, 20.0f, 97, 42);
@@ -105,15 +104,80 @@
     
     [self.view.layer addSublayer:subLayerCanvas];
 
-    /*CGRect viewRect = CGRectMake(0, 333, 375, 333.5);
+    
+
+}
+
+- (void) redButtonIsPressed:(UIButton *)paramSender{
+    color1 = @1;
+}
+- (void) darkBlueButtonIsPressed:(UIButton *)paramSender{
+    color1 = @2;
+}
+- (void) greenButtonIsPressed:(UIButton *)paramSender{
+    color1 = @3;
+}
+- (void) greyButtonIsPressed:(UIButton *)paramSender{
+    color1 = @4;
+}
+- (void) violetButtonIsPressed:(UIButton *)paramSender{
+    color1 = @5;
+}
+- (void) peachButtonIsPressed:(UIButton *)paramSender{
+    color1 = @6;
+}
+- (void) orangeButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"orange");
+    color1 = @7;
+}
+- (void) blueButtonIsPressed:(UIButton *)paramSender{
+    color1 = @8;
+}
+- (void) pinkButtonIsPressed:(UIButton *)paramSender{
+    color1 = @9;
+}
+- (void) darkGreyButtonIsPressed:(UIButton *)paramSender{
+    color1 = @10;
+}
+- (void) darkGreenButtonIsPressed:(UIButton *)paramSender{
+    color1 = @11;
+}
+- (void) brownButtonIsPressed:(UIButton *)paramSender{
+    color1 = @12;
+}
+- (void) saveButtonIsPressed:(UIButton *)paramSender{
+    NSLog(@"save");
+}
+
+- (void) paletteButtonIsPressed:(UIButton *)paramSender{
+    
+    CGRect viewRect = CGRectMake(0, 550, 375, 333.5);
      UIView *colorView = [[UIView alloc] initWithFrame:viewRect];
      colorView.backgroundColor = [UIColor whiteColor];
-     [self.view addSubview:colorView];*/
+    colorView.layer.cornerRadius = 40;
+    colorView.layer.shadowRadius = 8;
+    colorView.layer.shadowOpacity = 0.25;
+     [self.view addSubview:colorView];
+    
+    /*self.saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.saveButton.frame = CGRectMake(250.0f, 560.0f, 85.0f, 32.0f);
+    self.saveButton.layer.borderWidth = 1;
+    [saveButton.titleLabel setFont:[UIFont fontWithName:@"Montserrat-Medium" size:18.0]];
+    [self.saveButton setTitle:@"Save"
+                         forState:UIControlStateNormal];
+    [saveButton setTitleColor:[UIColor colorWithRed:33/255.0 green:176/255.0 blue:142/255.0 alpha:1.0] forState:UIControlStateNormal];
+    self.saveButton.layer.cornerRadius = 10;
+    self.saveButton.layer.borderColor = [UIColor colorWithRed:33.0 / 255.0 green:176.0 / 255.0 blue:142.0 / 255.0 alpha:1.0].CGColor;
+    [self.saveButton addTarget:self
+                          action:@selector(saveButtonIsPressed:)
+                forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:self.saveButton]; */
     
     self.redButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.redButton.frame = CGRectMake(17.0f, 425.0f, 24.0f, 24.0f);
+    self.redButton.frame = CGRectMake(17.0f, 570.0f, 24.0f, 24.0f);
     self.redButton.layer.cornerRadius = 6;
     self.redButton.layer.backgroundColor = [UIColor colorWithRed:226.0 / 255.0 green:27.0 / 255.0 blue:44.0 / 255.0 alpha:1.0].CGColor;
+    
     [self.redButton addTarget:self
                          action:@selector(redButtonIsPressed:)
                forControlEvents:UIControlEventTouchUpInside];
@@ -123,7 +187,7 @@
     
     
     self.darkBlueButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.darkBlueButton.frame = CGRectMake(72.0f, 425.0f, 24.0f, 24.0f);
+    self.darkBlueButton.frame = CGRectMake(72.0f, 570.0f, 24.0f, 24.0f);
     self.darkBlueButton.layer.cornerRadius = 6;
     self.darkBlueButton.layer.backgroundColor = [UIColor colorWithRed:62.0 / 255.0 green:23.0 / 255.0 blue:204.0 / 255.0 alpha:1.0].CGColor;
     [self.darkBlueButton addTarget:self
@@ -133,7 +197,7 @@
     [self.view addSubview:darkBlueButton];
     
     self.greenButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.greenButton.frame = CGRectMake(127.0f, 425.0f, 24.0f, 24.0f);
+    self.greenButton.frame = CGRectMake(127.0f, 570.0f, 24.0f, 24.0f);
     self.greenButton.layer.cornerRadius = 6;
     self.greenButton.layer.backgroundColor = [UIColor colorWithRed:0 / 255.0 green:124.0 / 255.0 blue:55.0 / 255.0 alpha:1.0].CGColor;
     [self.greenButton addTarget:self
@@ -143,7 +207,7 @@
     [self.view addSubview:greenButton];
     
     self.greyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.greyButton.frame = CGRectMake(182.0f, 425.0f, 24.0f, 24.0f);
+    self.greyButton.frame = CGRectMake(182.0f, 570.0f, 24.0f, 24.0f);
     self.greyButton.layer.cornerRadius = 6;
     self.greyButton.layer.backgroundColor = [UIColor colorWithRed:128 / 255.0 green:128.0 / 255.0 blue:128.0 / 255.0 alpha:1.0].CGColor;
     [self.greyButton addTarget:self
@@ -153,7 +217,7 @@
     [self.view addSubview:greyButton];
     
     self.violetButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.violetButton.frame = CGRectMake(237.0f, 425.0f, 24.0f, 24.0f);
+    self.violetButton.frame = CGRectMake(237.0f, 570.0f, 24.0f, 24.0f);
     self.violetButton.layer.cornerRadius = 6;
     self.violetButton.layer.backgroundColor = [UIColor colorWithRed:157 / 255.0 green:94.0 / 255.0 blue:234.0 / 255.0 alpha:1.0].CGColor;
     [self.violetButton addTarget:self
@@ -163,7 +227,7 @@
     [self.view addSubview:violetButton];
     
     self.peachButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.peachButton.frame = CGRectMake(292.0f, 425.0f, 24.0f, 24.0f);
+    self.peachButton.frame = CGRectMake(292.0f, 570.0f, 24.0f, 24.0f);
     self.peachButton.layer.cornerRadius = 6;
     self.peachButton.layer.backgroundColor = [UIColor colorWithRed:255 / 255.0 green:122.0 / 255.0 blue:104.0 / 255.0 alpha:1.0].CGColor;
     [self.peachButton addTarget:self
@@ -173,7 +237,7 @@
     [self.view addSubview:peachButton];
     
     self.orangeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.orangeButton.frame = CGRectMake(17.0f, 470.0f, 24.0f, 24.0f);
+    self.orangeButton.frame = CGRectMake(17.0f, 615.0f, 24.0f, 24.0f);
     self.orangeButton.layer.cornerRadius = 6;
     self.orangeButton.layer.backgroundColor = [UIColor colorWithRed:255.0 / 255.0 green:173.0 / 255.0 blue:84.0 / 255.0 alpha:1.0].CGColor;
     [self.orangeButton addTarget:self
@@ -183,7 +247,7 @@
     [self.view addSubview:orangeButton];
     
     self.blueButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.blueButton.frame = CGRectMake(72.0f, 470.0f, 24.0f, 24.0f);
+    self.blueButton.frame = CGRectMake(72.0f, 615.0f, 24.0f, 24.0f);
     self.blueButton.layer.cornerRadius = 6;
     self.blueButton.layer.backgroundColor = [UIColor colorWithRed:0 / 255.0 green:174.0 / 255.0 blue:237.0 / 255.0 alpha:1.0].CGColor;
     [self.blueButton addTarget:self
@@ -193,7 +257,7 @@
     [self.view addSubview:blueButton];
     
     self.pinkButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.pinkButton.frame = CGRectMake(127.0f, 470.0f, 24.0f, 24.0f);
+    self.pinkButton.frame = CGRectMake(127.0f, 615.0f, 24.0f, 24.0f);
     self.pinkButton.layer.cornerRadius = 6;
     self.pinkButton.layer.backgroundColor = [UIColor colorWithRed:255 / 255.0 green:119.0 / 255.0 blue:162.0 / 255.0 alpha:1.0].CGColor;
     [self.pinkButton addTarget:self
@@ -204,7 +268,7 @@
     [self.view addSubview:pinkButton];
     
     self.darkGreyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.darkGreyButton.frame = CGRectMake(182.0f, 470.0f, 24.0f, 24.0f);
+    self.darkGreyButton.frame = CGRectMake(182.0f, 615.0f, 24.0f, 24.0f);
     self.darkGreyButton.layer.cornerRadius = 6;
     self.darkGreyButton.layer.backgroundColor = [UIColor colorWithRed:0 / 255.0 green:46.0 / 255.0 blue:60.0 / 255.0 alpha:1.0].CGColor;
     [self.darkGreyButton addTarget:self
@@ -215,7 +279,7 @@
     [self.view addSubview:darkGreyButton];
     
     self.darkGreenButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.darkGreenButton.frame = CGRectMake(237.0f, 470.0f, 24.0f, 24.0f);
+    self.darkGreenButton.frame = CGRectMake(237.0f, 615.0f, 24.0f, 24.0f);
     self.darkGreenButton.layer.cornerRadius = 6;
     self.darkGreenButton.layer.backgroundColor = [UIColor colorWithRed:14 / 255.0 green:55.0 / 255.0 blue:24.0 / 255.0 alpha:1.0].CGColor;
     [self.darkGreenButton addTarget:self
@@ -226,7 +290,7 @@
     [self.view addSubview:darkGreenButton];
     
     self.brownButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.brownButton.frame = CGRectMake(292.0f, 470.0f, 24.0f, 24.0f);
+    self.brownButton.frame = CGRectMake(292.0f, 615.0f, 24.0f, 24.0f);
     self.brownButton.layer.cornerRadius = 6;
     self.brownButton.layer.backgroundColor = [UIColor colorWithRed:97 / 255.0 green:15.0 / 255.0 blue:16.0 / 255.0 alpha:1.0].CGColor;
     [self.brownButton addTarget:self
@@ -235,66 +299,10 @@
     
     [self.brownButton setTag:12];
     [self.view addSubview:brownButton];
-
-}
-
-- (void) redButtonIsPressed:(UIButton *)paramSender{
-    NSLog(@"red");
-    color1 = @1;
-}
-- (void) darkBlueButtonIsPressed:(UIButton *)paramSender{
-    NSLog(@"dark blue");
-    color1 = @2;
-}
-- (void) greenButtonIsPressed:(UIButton *)paramSender{
-    NSLog(@"green");
-    color1 = @3;
-}
-- (void) greyButtonIsPressed:(UIButton *)paramSender{
-    NSLog(@"grey");
-    color1 = @4;
-}
-- (void) violetButtonIsPressed:(UIButton *)paramSender{
-    NSLog(@"violet");
-    color1 = @5;
-}
-- (void) peachButtonIsPressed:(UIButton *)paramSender{
-    NSLog(@"peach");
-    color1 = @6;
-}
-- (void) orangeButtonIsPressed:(UIButton *)paramSender{
-    NSLog(@"orange");
-    color1 = @7;
-}
-- (void) blueButtonIsPressed:(UIButton *)paramSender{
-    NSLog(@"blue");
-    color1 = @8;
-}
-- (void) pinkButtonIsPressed:(UIButton *)paramSender{
-    NSLog(@"pink");
-    color1 = @9;
-}
-- (void) darkGreyButtonIsPressed:(UIButton *)paramSender{
-    NSLog(@"dark grey");
-    color1 = @10;
-}
-- (void) darkGreenButtonIsPressed:(UIButton *)paramSender{
-    NSLog(@"dark green");
-    color1 = @11;
-}
-- (void) brownButtonIsPressed:(UIButton *)paramSender{
-    NSLog(@"dark green");
-    color1 = @12;
-}
-
-- (void) paletteButtonIsPressed:(UIButton *)paramSender{
-    CGRect viewRect = CGRectMake(0, 333, 375, 333.5);
-    UIView *colorView = [[UIView alloc] initWithFrame:viewRect];
-    colorView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:colorView];
 }
 
 - (void) buttonIsPressed:(UIButton *)paramSender{
+    
    
     UIBezierPath *path = [UIBezierPath bezierPath];
     
@@ -307,16 +315,7 @@
     [path addLineToPoint:CGPointMake(193, 142)];
     [path addLineToPoint:CGPointMake(220, 112)];
     [path addLineToPoint:CGPointMake(228.5, 100)];
-   /* [path addLineToPoint:CGPointMake(0, 77.5)];
-    [path addLineToPoint:CGPointMake(230.5, 50.5)];
-    [path addLineToPoint:CGPointMake(218.5, 40.5)];
-    [path addLineToPoint:CGPointMake(202, 43.5)];
-    [path addLineToPoint:CGPointMake(191, 60.5)];
-    [path addLineToPoint:CGPointMake(189, 83.5)];
-    [path addLineToPoint:CGPointMake(193, 96)];
-    [path closePath];*/
-    
-   [path moveToPoint:CGPointMake(184, 100)];
+    [path moveToPoint:CGPointMake(184, 100)];
     [path addLineToPoint:CGPointMake(175.5, 98.5)];
     [path addLineToPoint:CGPointMake(166, 100.5)];
     [path addLineToPoint:CGPointMake(158.5, 101.5)];
@@ -350,34 +349,11 @@
     [path addLineToPoint:CGPointMake(153, 84.5)];
     [path addLineToPoint:CGPointMake(159.5, 83.5)];
     [path addLineToPoint:CGPointMake(166, 82.5)];
-   // [path addLineToPoint:CGPointMake(171.5, 0)];
-  //  [path addLineToPoint:CGPointMake(174.5, 84.5)];
-  //  [path addLineToPoint:CGPointMake(179.5, 89.5)];
-   // [path addLineToPoint:CGPointMake(187, 94)];
-   // [path addLineToPoint:CGPointMake(174.5, 84.5)];
-   // [path addLineToPoint:CGPointMake(174.5, 84.5)];
-   // [path addLineToPoint:CGPointMake(174.5, 84.5)];
-   // [path addLineToPoint:CGPointMake(174.5, 84.5)];
     [path closePath];
     
-   [path moveToPoint:CGPointMake(189.5, 102.5)];
-   // [path addLineToPoint:CGPointMake(194, 108.5)];
-   // [path addLineToPoint:CGPointMake(196.5, 115)];
-   // [path addLineToPoint:CGPointMake(193, 124)];
-   // [path addLineToPoint:CGPointMake(186, 132.5)];
-   // [path addLineToPoint:CGPointMake(177, 139.5)];
-   // [path addLineToPoint:CGPointMake(167.5, 132.5)];
-    //[path addLineToPoint:CGPointMake(157, 128.5)];
-  //  [path addLineToPoint:CGPointMake(147.5, 0)];
-   // [path addLineToPoint:CGPointMake(135.5, 132.5)];
-   // [path addLineToPoint:CGPointMake(127.5, 142)];
-    //[path addLineToPoint:CGPointMake(121, 154.5)];
-    //[path addLineToPoint:CGPointMake(109.5, 147.5)];
+    [path moveToPoint:CGPointMake(189.5, 102.5)];
     [path addLineToPoint:CGPointMake(101.5, 137.5)];
     [path addLineToPoint:CGPointMake(93, 128.5)];
-   // [path addLineToPoint:CGPointMake(0, 142)];
-   // [path addLineToPoint:CGPointMake(0, 170.5)];
-   // [path addLineToPoint:CGPointMake(0, 187.5)];
     [path addLineToPoint:CGPointMake(86, 199)];
     [path addLineToPoint:CGPointMake(74.5, 207.5)];
     [path addLineToPoint:CGPointMake(63.5, 214.5)];
@@ -387,92 +363,71 @@
     [path addLineToPoint:CGPointMake(119, 261)];
     [path addLineToPoint:CGPointMake(138, 279)];
     [path addLineToPoint:CGPointMake(157, 285.5)];
-   // [path addLineToPoint:CGPointMake(171, 0)];
     [path addLineToPoint:CGPointMake(186, 277.5)];
     [path addLineToPoint:CGPointMake(199.5, 261)];
     [path addLineToPoint:CGPointMake(209.5, 239.5)];
     [path addLineToPoint:CGPointMake(219, 223.5)];
     [path addLineToPoint:CGPointMake(233.5, 217)];
-   // [path addLineToPoint:CGPointMake(237, 0)];
     [path addLineToPoint:CGPointMake(230.5, 201.5)];
     [path addLineToPoint:CGPointMake(221, 173)];
     [path addLineToPoint:CGPointMake(219, 150)];
-  //  [path addLineToPoint:CGPointMake(0, 126.5)];
     [path addLineToPoint:CGPointMake(212, 137.5)];
     [path addLineToPoint:CGPointMake(204, 145.5)];
     [path addLineToPoint:CGPointMake(196.5, 154.5)];
     [path addLineToPoint:CGPointMake(180, 170.5)];
     [path addLineToPoint:CGPointMake(170, 185)];
-   // [path addLineToPoint:CGPointMake(161.5, 206.5)];
-    //[path addLineToPoint:CGPointMake(158.5, 232.5)];
-   // [path addLineToPoint:CGPointMake(0, 261)];
-   // [path addLineToPoint:CGPointMake(0, 279)];
-    
     [path closePath];
     
     CAShapeLayer *bezier = [[CAShapeLayer alloc] init];
     bezier.path          = path.CGPath;
     bezier.strokeColor   = [UIColor colorWithRed:0 / 255.0 green:0 / 255.0 blue:0 / 255.0 alpha:1.0].CGColor;
-    NSLog(@"color1 %@", color1);
 
     if([color1  isEqual: @1]){
         bezier.strokeColor   = [UIColor colorWithRed:226.0 / 255.0 green:27.0 / 255.0 blue:44.0 / 255.0 alpha:1.0].CGColor;
-        NSLog(@"@1 %@", color1);
     }
     
     if([color1  isEqual: @2]){
         bezier.strokeColor   = [UIColor colorWithRed:62.0 / 255.0 green:23.0 / 255.0 blue:204.0 / 255.0 alpha:1.0].CGColor;
-        NSLog(@"@2 %@", color1);
     }
     
     if([color1  isEqual: @3]){
         bezier.strokeColor   = [UIColor colorWithRed:0 / 255.0 green:124.0 / 255.0 blue:55.0 / 255.0 alpha:1.0].CGColor;
-        NSLog(@"@3 %@", color1);
     }
     
     if([color1  isEqual: @4]){
-        bezier.strokeColor   = [UIColor colorWithRed:128 / 255.0 green:128.0 / 255.0 blue:128.0 / 255.0 alpha:1.0].CGColor; 
-        NSLog(@"@4 %@", color1);
+        bezier.strokeColor   = [UIColor colorWithRed:128 / 255.0 green:128.0 / 255.0 blue:128.0 / 255.0 alpha:1.0].CGColor;
     }
     
     if([color1  isEqual: @5]){
         bezier.strokeColor   = [UIColor colorWithRed:157 / 255.0 green:94.0 / 255.0 blue:234.0 / 255.0 alpha:1.0].CGColor;
-        NSLog(@"@5 %@", color1);
     }
     
     if([color1  isEqual: @6]){
         bezier.strokeColor   = [UIColor colorWithRed:255 / 255.0 green:122.0 / 255.0 blue:104.0 / 255.0 alpha:1.0].CGColor;
-        NSLog(@"@6 %@", color1);
     }
     
     if([color1  isEqual: @7]){
         bezier.strokeColor   = [UIColor colorWithRed:255.0 / 255.0 green:173.0 / 255.0 blue:84.0 / 255.0 alpha:1.0].CGColor;
-        NSLog(@"@7 %@", color1);
     }
     
     if([color1  isEqual: @8]){
         bezier.strokeColor   = [UIColor colorWithRed:0 / 255.0 green:174.0 / 255.0 blue:237.0 / 255.0 alpha:1.0].CGColor;
-        NSLog(@"@8 %@", color1);
     }
     
     if([color1  isEqual: @9]){
         bezier.strokeColor   = [UIColor colorWithRed:255 / 255.0 green:119.0 / 255.0 blue:162.0 / 255.0 alpha:1.0].CGColor;
-        NSLog(@"@9 %@", color1);
     }
     
     if([color1  isEqual: @10]){
         bezier.strokeColor   = [UIColor colorWithRed:0 / 255.0 green:46.0 / 255.0 blue:60.0 / 255.0 alpha:1.0].CGColor;
-        NSLog(@"@10 %@", color1);
     }
     
     if([color1  isEqual: @11]){
         bezier.strokeColor   = [ UIColor colorWithRed:14 / 255.0 green:55.0 / 255.0 blue:24.0 / 255.0 alpha:1.0].CGColor;
-        NSLog(@"@11 %@", color1);
     }
     
     if([color1  isEqual: @12]){
         bezier.strokeColor   = [UIColor colorWithRed:97 / 255.0 green:15.0 / 255.0 blue:16.0 / 255.0 alpha:1.0].CGColor;
-        NSLog(@"@12 %@", color1);
     }
 
     bezier.fillColor     = [UIColor clearColor].CGColor;
@@ -481,6 +436,11 @@
     bezier.strokeEnd     = 1.0;
     bezier.position=CGPointMake(38.0,102.0);
     [self.view.layer addSublayer:bezier];
+    
+    /*if (bezier){
+        [self.drawButton setTitle:@"Reset"
+                             forState:UIControlStateNormal];
+    }*/
     
     CABasicAnimation *animateStrokeEnd = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     animateStrokeEnd.duration  = 10.0;
