@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		580631D126A5FED500694642 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 580631CF26A5FED400694642 /* Montserrat-Regular.ttf */; };
+		580631D226A5FED500694642 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 580631D026A5FED400694642 /* Montserrat-Medium.ttf */; };
+		580631D526A6031B00694642 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 580631D426A6031B00694642 /* README.md */; };
 		5809977F26A18661001E00A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5809977E26A18661001E00A3 /* AppDelegate.m */; };
 		5809978526A18661001E00A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5809978426A18661001E00A3 /* ViewController.m */; };
 		5809978A26A18664001E00A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5809978926A18664001E00A3 /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		580631CF26A5FED400694642 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../../Downloads/RSSchool_T8_Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		580631D026A5FED400694642 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.ttf"; path = "../../../../Users/taisiakataieva/Downloads/RSSchool_T8_Fonts/Montserrat-Medium.ttf"; sourceTree = DEVELOPER_DIR; };
+		580631D426A6031B00694642 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5809977A26A18661001E00A3 /* RSSchool_T8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSchool_T8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5809977D26A18661001E00A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5809977E26A18661001E00A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,6 +48,7 @@
 		5809977126A18661001E00A3 = {
 			isa = PBXGroup;
 			children = (
+				580631D426A6031B00694642 /* README.md */,
 				5809977C26A18661001E00A3 /* RSSchool_T8 */,
 				5809977B26A18661001E00A3 /* Products */,
 			);
@@ -62,6 +69,8 @@
 				5809977E26A18661001E00A3 /* AppDelegate.m */,
 				5809978326A18661001E00A3 /* ViewController.h */,
 				5809978426A18661001E00A3 /* ViewController.m */,
+				580631D026A5FED400694642 /* Montserrat-Medium.ttf */,
+				580631CF26A5FED400694642 /* Montserrat-Regular.ttf */,
 				5809978926A18664001E00A3 /* Assets.xcassets */,
 				5809978B26A18664001E00A3 /* LaunchScreen.storyboard */,
 				5809978E26A18664001E00A3 /* Info.plist */,
@@ -127,6 +136,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				580631D526A6031B00694642 /* README.md in Resources */,
+				580631D126A5FED500694642 /* Montserrat-Regular.ttf in Resources */,
+				580631D226A5FED500694642 /* Montserrat-Medium.ttf in Resources */,
 				5809978D26A18664001E00A3 /* LaunchScreen.storyboard in Resources */,
 				5809979726A1AF3E001E00A3 /* RSSchool_T8_Fonts in Resources */,
 				5809978A26A18664001E00A3 /* Assets.xcassets in Resources */,
