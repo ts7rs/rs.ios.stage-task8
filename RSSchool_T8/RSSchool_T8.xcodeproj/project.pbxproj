@@ -31,7 +31,7 @@
 		5809978C26A18664001E00A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5809978E26A18664001E00A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5809978F26A18664001E00A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5809979626A1AF3D001E00A3 /* RSSchool_T8_Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RSSchool_T8_Fonts; path = ../../../../Downloads/RSSchool_T8_Fonts; sourceTree = "<group>"; };
+		5809979626A1AF3D001E00A3 /* RSSchool_T8_Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RSSchool_T8_Fonts; path = "/Users/taisiakataieva/Documents/rs.ios.stage-task8/RSSchool_T8/RSSchool_T8/RSSchool_T8_Fonts"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
